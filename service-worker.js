@@ -1,6 +1,6 @@
 const CACHE_NAME = 'tzuyang-food-map-v3';
 const ASSETS_TO_CACHE = [
-  'tzuyang_food_map.html',
+  'index.html',
   'manifest.json',
   'icon.png',
   'tzuyang_restaurants_coords.json'
@@ -32,7 +32,7 @@ self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
   
   // HTML 대시보드와 데이터 JSON에 대해서는 Network-First 전략 적용 (캐시 고착 방지)
-  if (url.pathname.includes('tzuyang_food_map.html') || url.pathname.includes('tzuyang_restaurants_coords.json')) {
+  if (url.pathname.includes('index.html') || url.pathname.includes('tzuyang_restaurants_coords.json')) {
     event.respondWith(
       fetch(event.request)
         .then(networkResponse => {
