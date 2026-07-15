@@ -1,0 +1,18 @@
+{
+  "name": "쯔양 맛집 지도",
+  "short_name": "쯔양맛집",
+  "description": "유튜버 쯔양이 다녀간 전국의 검증된 맛집 지도 대시보드 (M.A.G)",
+  "start_url": "tzuyang_food_map.html",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#4f46e5",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
