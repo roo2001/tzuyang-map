@@ -672,6 +672,18 @@ def build_html_dashboard():
                 display: none !important;
             }
         }
+        /* 맵 마커 라벨 항상 표시 (v30) */
+        .marker-label {
+            background-color: rgba(255, 255, 255, 0.85);
+            border: 1px solid #ccc;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            font-weight: 600;
+            color: #222;
+            font-size: 11px;
+            padding: 2px 5px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
     </style>
     <link rel="manifest" href="manifest.json">
 </head>
@@ -971,6 +983,14 @@ def build_html_dashboard():
                 }
                 
                 const marker = L.marker([rest.latitude, rest.longitude], { icon: markerIcon });
+                
+                // 마커 아래에 상호명 항상 표시 (v30)
+                marker.bindTooltip(rest.name, {
+                    permanent: true,
+                    direction: 'bottom',
+                    className: 'marker-label',
+                    offset: [0, 5]
+                });
                 
                 const popupContent = `
                     <div class="popup-container">

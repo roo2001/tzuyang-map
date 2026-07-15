@@ -7378,6 +7378,20 @@
         "group": "B"
     },
     {
+        "name": "통영 해녀촌식당",
+        "region": "경남 통영시",
+        "address": "경남 통영시 욕지면 서촌아랫길 112",
+        "category": "해산물/회",
+        "main_menu": "고등어회, 멍게비빔밥",
+        "video_title": "현지 대표 맛집",
+        "video_url": "https://www.youtube.com/results?search_query=%ED%86%B5%EC%98%81%20%ED%95%B4%EB%85%80%EC%B4%8C%EC%8B%9D%EB%8B%B9",
+        "comment": "경남 통영의 대표적인 로컬 맛집. 현지 노포 감성과 정취를 느낄 수 있는 곳.",
+        "latitude": 34.6347,
+        "longitude": 128.2575,
+        "naver_map_url": "https://map.naver.com/v5/search/%ED%86%B5%EC%98%81%20%ED%95%B4%EB%85%80%EC%B4%8C%EC%8B%9D%EB%8B%B9",
+        "group": "B"
+    },
+    {
         "name": "충남식당",
         "region": "경남 거제시",
         "address": "거제시 거제중앙로 1883-2",
@@ -7456,8 +7470,8 @@
         "video_title": "현지 대표 맛집",
         "video_url": "https://www.youtube.com/results?search_query=%EC%99%B8%ED%8F%AC9%EB%B2%88%ED%9A%9F%EC%A7%91",
         "comment": "경남 거제의 대표적인 로컬 맛집. 현지 노포 감성과 정취를 느낄 수 있는 곳.",
-        "latitude": 34.938991,
-        "longitude": 128.717987,
+        "latitude": 34.9355,
+        "longitude": 128.7188,
         "naver_map_url": "https://map.naver.com/v5/search/%EC%99%B8%ED%8F%AC9%EB%B2%88%ED%9A%9F%EC%A7%91",
         "group": "B"
     },
@@ -7492,14 +7506,14 @@
     {
         "name": "강성횟집",
         "region": "경남 거제시",
-        "address": "경남 거제시 일운면 지세포해안로 204",
+        "address": "거제시 일운면 지세포항",
         "category": "해산물/회",
         "main_menu": "자연산 물회",
         "video_title": "현지 대표 맛집",
         "video_url": "https://www.youtube.com/results?search_query=%EA%B0%95%EC%84%B1%ED%9A%9F%EC%A7%91",
         "comment": "경남 거제의 대표적인 로컬 맛집. 현지 노포 감성과 정취를 느낄 수 있는 곳.",
-        "latitude": 34.831551,
-        "longitude": 128.714834,
+        "latitude": 34.83202,
+        "longitude": 128.69341,
         "naver_map_url": "https://map.naver.com/v5/search/%EA%B0%95%EC%84%B1%ED%9A%9F%EC%A7%91",
         "group": "B"
     },
@@ -7518,6 +7532,20 @@
         "group": "B"
     },
     {
+        "name": "싱싱게장",
+        "region": "경남 거제시",
+        "address": "거제시 장승포로 48",
+        "category": "해산물/회",
+        "main_menu": "게장백반, 양념게장",
+        "video_title": "현지 대표 맛집",
+        "video_url": "https://www.youtube.com/results?search_query=%EC%8B%B1%EC%8B%B1%EA%B2%8C%EC%9E%A5",
+        "comment": "경남 거제의 대표적인 로컬 맛집. 현지 노포 감성과 정취를 느낄 수 있는 곳.",
+        "latitude": 34.858942,
+        "longitude": 128.69543,
+        "naver_map_url": "https://map.naver.com/v5/search/%EC%8B%B1%EC%8B%B1%EA%B2%8C%EC%9E%A5",
+        "group": "B"
+    },
+    {
         "name": "하얀등대횟집",
         "region": "경남 거제시",
         "address": "경남 거제시 마전9길 22",
@@ -7526,8 +7554,8 @@
         "video_title": "현지 대표 맛집",
         "video_url": "https://www.youtube.com/results?search_query=%ED%95%98%EC%96%80%EB%93%B1%EB%8C%80%ED%9A%9F%EC%A7%91",
         "comment": "경남 거제의 대표적인 로컬 맛집. 현지 노포 감성과 정취를 느낄 수 있는 곳.",
-        "latitude": 34.861925,
-        "longitude": 128.725926,
+        "latitude": 34.881735,
+        "longitude": 128.715367,
         "naver_map_url": "https://map.naver.com/v5/search/%ED%95%98%EC%96%80%EB%93%B1%EB%8C%80%ED%9A%9F%EC%A7%91",
         "group": "B"
     },
@@ -7599,6 +7627,20 @@
         "latitude": 35.163351,
         "longitude": 128.11306,
         "naver_map_url": "https://map.naver.com/v5/search/%ED%99%A9%ED%8F%AC%EB%83%89%EB%A9%B4",
+        "group": "B"
+    },
+    {
+        "name": "송기원진주냉면",
+        "region": "경남 진주시",
+        "address": "진주시 중앙시장 인근",
+        "category": "한식",
+        "main_menu": "전통 진주냉면 (백년가게)",
+        "video_title": "현지 대표 맛집",
+        "video_url": "https://www.youtube.com/results?search_query=%EC%86%A1%EA%B8%B0%EC%9B%90%EC%A7%84%EC%A3%BC%EB%83%89%EB%A9%B4",
+        "comment": "경남 진주의 대표적인 로컬 맛집. 현지 노포 감성과 정취를 느낄 수 있는 곳.",
+        "latitude": 35.19112,
+        "longitude": 128.08543,
+        "naver_map_url": "https://map.naver.com/v5/search/%EC%86%A1%EA%B8%B0%EC%9B%90%EC%A7%84%EC%A3%BC%EB%83%89%EB%A9%B4",
         "group": "B"
     },
     {
@@ -9097,6 +9139,20 @@
         "latitude": 35.83676578378633,
         "longitude": 129.20920139844117,
         "naver_map_url": "https://map.naver.com/v5/search/%EA%B2%BD%EC%A3%BC%20%ED%99%A9%EB%82%A8%EC%95%84%EB%8D%B4",
+        "group": "B"
+    },
+    {
+        "name": "진주 천황식당",
+        "region": "경남 진주",
+        "address": "경남 진주시 촉석로207번길 3",
+        "category": "해산물/회",
+        "main_menu": "진주비빔밥, 석쇠불고기, 육회",
+        "video_title": "진주 100년 전통 비빔밥 천황식당 먹방",
+        "video_url": "https://www.youtube.com/results?search_query=쯔양+진주+천황식당",
+        "comment": "100년 전통을 자랑하는 진주비빔밥 노포. 사골 육수로 지은 밥에 신선한 육회와 보들보들한 나물의 조화가 일품.",
+        "latitude": 35.19610771095438,
+        "longitude": 128.08448978903132,
+        "naver_map_url": "https://map.naver.com/v5/search/%EC%A7%84%EC%A3%BC%20%EC%B2%9C%ED%99%A9%EC%8B%9D%EB%8B%B9",
         "group": "B"
     },
     {
