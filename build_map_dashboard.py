@@ -417,13 +417,19 @@ def build_html_dashboard():
         }
 
         .btn-naver {
-            background: var(--naver-gradient);
-            color: white;
+            background: linear-gradient(135deg, #03c75a 0%, #028a3e 100%) !important;
+            color: #ffffff !important;
+            font-weight: 800 !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 2px 6px rgba(3, 199, 90, 0.2);
         }
 
         .btn-youtube {
-            background: var(--youtube-gradient);
-            color: white;
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%) !important;
+            color: #ffffff !important;
+            font-weight: 800 !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 2px 6px rgba(255, 0, 0, 0.2);
         }
 
         /* 지도 영역 */
@@ -648,6 +654,24 @@ def build_html_dashboard():
                 display: none !important;
             }
         }
+
+        /* 모바일 자연스러운 세로 스크롤 레이아웃 바인딩 */
+        @media (max-width: 767px) {
+            .container.mobile-scroll-mode {
+                height: auto !important;
+                min-height: 100vh !important;
+                overflow-y: visible !important;
+                overflow-x: hidden !important;
+            }
+            .container.mobile-scroll-mode .sidebar {
+                height: auto !important;
+                overflow-y: visible !important;
+                display: flex !important;
+            }
+            .container.mobile-scroll-mode #map {
+                display: none !important;
+            }
+        }
     </style>
     <link rel="manifest" href="manifest.json">
 </head>
@@ -678,10 +702,9 @@ def build_html_dashboard():
                 <!-- 카테고리 필터 -->
                 <div class="filter-group">
                     <span class="filter-label">음식 종류</span>
-                    <div class="category-chips" id="categoryChips">
-                        <div class="chip active" data-category="ALL">전체</div>
-                        <!-- 자바스크립트로 동적 로드 -->
-                    </div>
+                    <select id="categorySelect" class="select-filter">
+                        <option value="ALL">전체 음식</option>
+                    </select>
                 </div>
                 
                 <!-- 지역 필터 -->
@@ -780,27 +803,17 @@ def build_html_dashboard():
                 if (regionName) regions.add(regionName);
             });
             
-            // 카테고리 칩 렌더링
-            const chipsContainer = document.getElementById('categoryChips');
+            // 카테고리 드롭다운 렌더링
+            const categorySelect = document.getElementById('categorySelect');
             categories.forEach(cat => {
-                const chip = document.createElement('div');
-                chip.className = 'chip';
-                chip.setAttribute('data-category', cat);
-                chip.textContent = cat;
-                chip.onclick = () => {
-                    document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-                    chip.classList.add('active');
-                    currentFilter.category = cat;
-                    applyFilters();
-                };
-                chipsContainer.appendChild(chip);
+                const opt = document.createElement('option');
+                opt.value = cat;
+                opt.textContent = cat;
+                categorySelect.appendChild(opt);
             });
             
-            // 전체 칩 클릭 재바인딩
-            document.querySelector('.chip[data-category="ALL"]').onclick = function() {
-                document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-                this.classList.add('active');
-                currentFilter.category = 'ALL';
+            categorySelect.onchange = (e) => {
+                currentFilter.category = e.target.value;
                 applyFilters();
             };
             
@@ -1004,23 +1017,35 @@ def build_html_dashboard():
             }
         }
 
-        // 모바일 탭 스위처 (카드 클릭 시 지도 리셋 방지 인자 추가)
+        // 모바일 탭 스위처 (카드 클릭 시 지도 리셋 방지 인자 추가 및 모바일 세로 확장 스크롤 바인딩)
         function switchTab(tab, isCardClick = false) {
             const sidebar = document.querySelector('.sidebar');
             const mapEl = document.getElementById('map');
             const tabList = document.getElementById('tabList');
             const tabMap = document.getElementById('tabMap');
+            const container = document.querySelector('.container');
             
             if (tab === 'list') {
                 sidebar.style.display = 'flex';
                 mapEl.style.display = 'none';
                 tabList.classList.add('active');
                 tabMap.classList.remove('active');
+                
+                // 모바일 뷰포트에서 세로 관성 스크롤 모드 개방
+                if (window.innerWidth < 768) {
+                    container.classList.add('mobile-scroll-mode');
+                }
             } else if (tab === 'map') {
                 sidebar.style.display = 'none';
                 mapEl.style.display = 'block';
                 tabList.classList.remove('active');
                 tabMap.classList.add('active');
+                
+                // 모바일 뷰포트에서 전체화면 지도 뷰로 락인
+                if (window.innerWidth < 768) {
+                    container.classList.remove('mobile-scroll-mode');
+                    mapEl.style.height = 'calc(100vh - 64px)';
+                }
                 
                 setTimeout(() => {
                     map.invalidateSize();
@@ -1036,6 +1061,11 @@ def build_html_dashboard():
             initMap();
             initFilters();
             applyFilters();
+            
+            // 모바일 뷰 초기 상태 강제 세로 스크롤 바인딩
+            if (window.innerWidth < 768) {
+                switchTab('list');
+            }
             
             // PWA 서비스 워커 등록
             if ('serviceWorker' in navigator) {
